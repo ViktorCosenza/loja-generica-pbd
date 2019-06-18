@@ -1,0 +1,39 @@
+{
+  "name": "loja-generica-pbd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev": "nodemon index.js --exec babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktorCosenza/loja-generica-pbd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViktorCosenza/loja-generica-pbd/issues"
+  },
+  "homepage": "https://github.com/ViktorCosenza/loja-generica-pbd#readme",
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "dotenv": "^8.0.0",
+    "knex": "^0.17.6",
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^7.4.0",
+    "pg": "^7.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^1.19.1"
+  }
+}
