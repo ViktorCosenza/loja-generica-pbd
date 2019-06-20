@@ -1,6 +1,7 @@
 const knex = require('../config/server')
 
-const simpleSelect = (tableName, columns = '*') => knex.select(columns).from(tableName)
+const simpleSelect = (tableName, columns = '*', where = {}) =>
+  knex(tableName).where(where).select(columns)
 
 const simpleInsert = (tableName, data) => knex.insert(data).into(tableName)
 
@@ -11,7 +12,7 @@ const simpleUpdate = (tableName, where, data) => knex(tableName).where(where).up
 const queries = {
   select: {
     tipos: () => simpleSelect('tipos_produto'),
-    products: () => simpleSelect('produtos'),
+    products: (columns, where) => simpleSelect('produtos', columns, where),
     cargos: () => simpleSelect('cargos')
   },
   insert: {
