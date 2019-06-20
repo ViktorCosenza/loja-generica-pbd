@@ -4,9 +4,9 @@ const router = new Router()
 
 const ctrl = new ProductsController()
 
-router.get('/products', ctrl.show)
-router.post('/products', ctrl.create)
-router.put('/products', ctrl.update)
-router.del('/products', ctrl.remove)
+router.get('/produtos', ctrl.show)
+router.post('/produtos', ctrl.create)
+router.put('/produtos', ctrl.update)
+router.del('/produtos', ctrl.remove)
 
 module.exports = router.routes()
