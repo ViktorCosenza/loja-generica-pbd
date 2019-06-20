@@ -10,11 +10,13 @@ app.use(cors({
   origin: '*'
 }))
 
-app.use(routes.routes()).use(routes.allowedMethods())
-
 app.use(Logger())
 
-app.use(koaBody({ multipart: true }))
+app.use(koaBody({
+  parsedMethods: ['GET', 'POST', 'PUT', 'DELETE']
+}))
+
+/* app.use(routes.routes()).use(routes.allowedMethods()) */
 
 app.use(respond())
 
