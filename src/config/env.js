@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 const PGDATABASE = process.env.PGDATABASE || 'postgres'
 const PGHOST = process.env.PGHOST || 'localhost'
 const PGUSER = process.env.PGUSER || 'postgres'
