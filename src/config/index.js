@@ -1,14 +1,18 @@
 const Koa = require('koa')
 const Logger = require('koa-logger')
 const koaBody = require('koa-body')
-const Cors = require('@koa/cors')
+const cors = require('@koa/cors')
 const routes = require('../routes/index.js')
 const respond = require('koa-respond')
 const app = new Koa()
 
-app.use(Logger())
+app.use(cors({
+  origin: '*'
+}))
 
-app.use(Cors())
+app.use(routes.routes()).use(routes.allowedMethods())
+
+app.use(Logger())
 
 app.use(koaBody({ multipart: true }))
 
