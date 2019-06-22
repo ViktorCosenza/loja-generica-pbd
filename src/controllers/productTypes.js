@@ -3,7 +3,7 @@ const queries = require('../utils/queries')
 class Controller {
   async show (ctx) {
     const { query } = ctx
-    const queryResult = await queries.select.products(query)
+    const queryResult = await queries.select.tipos(query)
     const response = {
       rows: queryResult,
       rowCount: queryResult.length
@@ -14,7 +14,7 @@ class Controller {
   async create (ctx) {
     const { body } = ctx.request
     const data = body.search
-    const queryResult = await queries.insert.products(data)
+    const queryResult = await queries.insert.tipos(data)
     const response = {
       rows: {},
       rowCount: queryResult.rowCount
@@ -26,7 +26,7 @@ class Controller {
     const { body } = ctx.request
     const data = body.search
     const where = body.where
-    const queryResult = await queries.update.products(data, where)
+    const queryResult = await queries.update.tipos(data, where)
     const response = {
       rows: {},
       rowCount: queryResult
@@ -37,7 +37,7 @@ class Controller {
   async remove (ctx) {
     const { body } = ctx.request
     const where = body.where
-    const queryResult = await queries.del.products(where)
+    const queryResult = await queries.del.tipos(where)
     const response = {
       rows: {},
       rowCount: queryResult
