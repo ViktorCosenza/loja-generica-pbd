@@ -7,6 +7,8 @@ const funcionarios = require('./funcionario')
 const lojas = require('./lojas')
 const cidades = require('./cidades')
 const estoque = require('./estoque')
+const vendas = require('./vendas')
+const itemVenda = require('./itemVenda')
 
 const router = new Router()
 const api = new Router()
@@ -19,6 +21,8 @@ api.use(funcionarios)
 api.use(lojas)
 api.use(cidades)
 api.use(estoque)
+api.use(vendas)
+api.use(itemVenda)
 
 router.use('/v1', api.routes())
 

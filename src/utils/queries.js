@@ -17,7 +17,9 @@ const queries = {
     funcionarios: where => simpleSelect('funcionarios_cargo', where),
     lojas: where => simpleSelect('loja_cidade', where),
     cidades: where => simpleSelect('cidades', where),
-    estoque: where => simpleSelect('estoque_detalhado', where)
+    estoque: where => simpleSelect('estoque_detalhado', where),
+    vendas: where => simpleSelect('vendas_view', where),
+    itemVenda: where => simpleSelect('item_venda_view', where)
   },
   insert: {
     products: data => simpleInsert('produtos', data),
@@ -26,7 +28,9 @@ const queries = {
     funcionarios: data => simpleInsert('funcionarios', data),
     lojas: data => simpleInsert('lojas', data),
     cidades: data => simpleInsert('cidades', data),
-    estoque: data => simpleInsert('estoque', data)
+    estoque: data => simpleInsert('estoque', data),
+    vendas: data => simpleInsert('vendas_view', data),
+    itemVenda: data => simpleInsert('item_venda', data)
   },
   del: {
     tipos: where => simpleDelete('tipos_produto', where),
@@ -35,7 +39,9 @@ const queries = {
     cargos: where => simpleDelete('cargos', where),
     lojas: where => simpleDelete('lojas', where),
     cidades: where => simpleDelete('cidades', where),
-    estoque: where => simpleDelete('estoque', where)
+    estoque: where => simpleDelete('estoque', where),
+    vendas: where => simpleDelete('vendas_view', where),
+    itemVenda: where => simpleDelete('item_venda', where)
   },
   update: {
     tipos: (data, where) => simpleUpdate('tipos_produto', where, data),
@@ -44,7 +50,9 @@ const queries = {
     funcionarios: (data, where) => simpleUpdate('funcionarios', where, data),
     lojas: (data, where) => simpleUpdate('lojas', where, data),
     cidades: (data, where) => simpleUpdate('cidades', where, data),
-    estoque: (data, where) => simpleUpdate('estoque', where, data)
+    estoque: (data, where) => simpleUpdate('estoque', where, data),
+    vendas: (data, where) => simpleUpdate('vendas_view', where, data),
+    itemVenda: (data, where) => simpleUpdate('item_venda', where, data)
   }
 }
 
