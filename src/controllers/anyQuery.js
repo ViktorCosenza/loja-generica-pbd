@@ -3,7 +3,10 @@ const knex = require('../config/server')
 class Controller {
   async query (ctx) {
     const { body } = ctx.request
-    const response = await knex.schema.raw(body.query)
-    ctx.body = response
+    const queryResult = await knex.schema.raw(body.query)
+    const { rowCount, rows } = queryResult
+    ctx.body = { rowCount, rows }
   }
 }
+
+module.exports = Controller
